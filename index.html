@@ -147,17 +147,13 @@
     </footer>
   </div>
 
-  <script>
-    function toggleInstructions() {
-      const instructions = document.getElementById("instructions");
-      instructions.classList.toggle("hidden");
-    }
+    <script>
     function analyzeScore() {
-      const science = parseFloat(document.getElementById("science").value);
-      const math = parseFloat(document.getElementById("math").value);
-      const english = parseFloat(document.getElementById("english").value);
-      const filipino = parseFloat(document.getElementById("filipino").value);
-
+      var science = +document.getElementById("science").value;
+      var math = +document.getElementById("math").value;
+      var english = +document.getElementById("english").value;
+      var filipino = +document.getElementById("filipino").value;
+  
       if (
         isNaN(science) || science < 0 || science > 100 ||
         isNaN(math) || math < 0 || math > 100 ||
@@ -167,10 +163,10 @@
         document.getElementById("result").innerHTML = "Please enter valid grades between 0 and 100 for all subjects.";
         return;
       }
-
-      const average = (science + math + english + filipino) / 4;
-      let rating = "";
-
+  
+      var average = (science + math + english + filipino) / 4;
+      var rating = "";
+  
       if (average >= 94 && average <= 100) {
         rating = "Excellent";
       } else if (average >= 87 && average < 94) {
@@ -184,8 +180,9 @@
       } else {
         rating = "Invalid average.";
       }
-
+  
       document.getElementById("result").innerHTML = `Your average is ${average.toFixed(2)} - ${rating}`;
+    }
     }
   </script>
 </body>
