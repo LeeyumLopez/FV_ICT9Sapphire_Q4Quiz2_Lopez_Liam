@@ -148,6 +148,19 @@
   </div>
 
     <script>
+    function toggleInstructions() {
+     var instructions = document.getElementById("instructions");
+     var toggleText = document.querySelector(".toggle-instruction");
+
+      if (instructions.classList.contains("hidden")) {
+        instructions.classList.remove("hidden");
+        toggleText.innerHTML = "⏫ Click to Hide Instructions";
+      } else {
+        instructions.classList.add("hidden");
+        toggleText.innerHTML = "⏬ Click to Show Instructions";
+      }
+    }
+      
     function analyzeScore() {
       var science = +document.getElementById("science").value;
       var math = +document.getElementById("math").value;
